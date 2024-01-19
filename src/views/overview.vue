@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <main ref="container" id="container" style="width: 100vw;height: calc(100vh - 20px);">
+    <main ref="container" id="container" style="width: 100vw;height: calc(100vh);">
     </main>
     <buttonGroup @button="buttonReceive"></buttonGroup>
   </div>
@@ -136,7 +136,8 @@ onMounted(() => {
 function buttonReceive() {
   const mime = 'image/png'
   const img = viewer.get("imageData", {
-    format: mime
+    format: mime,
+    pixelRatio: 10
   });
   const byteCharacters = atob(img.split(',')[1])
   const byteNumbers = new Array(byteCharacters.length);
