@@ -1,1 +1,11 @@
 @import './base.css';
+
+.v-enter-active, .v-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+.v-enter-from, .v-leave-to {
+  opacity: 0;
+  transform: translateY(4px);
+}
